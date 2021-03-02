@@ -78,8 +78,15 @@ app.use('/api/admin', verifyRole, adminRouter);
 app.use('/api/mod', verifyRole, modRouter);
 app.use('/api/search', verifyRole, searchRouter);
 
+const request = new XMLHttpRequest();
+console.log(request);
+
 app.get('/', (request, response) =>
-  response.send({ message: 'Server working' })
+  response
+    .header({
+      'Access-Control-Allow-Origin': process.env.FRONTEND_DEPLOYED_URL
+    })
+    .send({ message: 'Server working' })
 );
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
