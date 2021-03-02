@@ -30,6 +30,7 @@ app.use(
   cors({
     credentials: true,
     origin: FRONTEND_URL,
+    allowedHeaders: ['sessionId', 'Content-Type'],
   })
 );
 
