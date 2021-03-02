@@ -18,6 +18,7 @@ async function verifyRole(req, res, next) {
 
 // Fetch logged-in user's object
 app.get('/', async (request, response) => {
+  console.log('REQUEST', request);
   const verifiedUser = await User.find({ id: request.user.id });
   try {
     response.status(200).json({
