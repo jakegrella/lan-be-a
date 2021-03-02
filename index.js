@@ -30,12 +30,9 @@ app.use(
   cors({
     credentials: true,
     origin: FRONTEND_URL,
-    allowedHeaders: ['sessionId', 'Content-Type', 'withCredentials', 'Authorization'],
-    methods: ['GET', 'PUT', 'POST']
   })
 );
 
-app.set('trust proxy', 1);
 app.use(
   session({
     // name: 'LAN',
