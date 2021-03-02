@@ -31,6 +31,7 @@ app.use(
     credentials: true,
     origin: FRONTEND_URL,
     allowedHeaders: ['sessionId', 'Content-Type', 'withCredentials'],
+    methods: ['GET', 'PUT', 'POST']
   })
 );
 
