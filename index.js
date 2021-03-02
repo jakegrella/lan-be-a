@@ -77,9 +77,6 @@ app.use('/api/admin', verifyRole, adminRouter);
 app.use('/api/mod', verifyRole, modRouter);
 app.use('/api/search', verifyRole, searchRouter);
 
-const request = new XMLHttpRequest();
-console.log(request);
-
 app.get('/', (request, response) =>
   response.send({ message: 'Server working' })
 );
