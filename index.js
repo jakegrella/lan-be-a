@@ -34,7 +34,7 @@ app.use(
 );
 
 app.use(
-  express.session({
+  session({
     // name: 'LAN',
     secret: process.env.SESSION_SECRET,
     resave: false,
