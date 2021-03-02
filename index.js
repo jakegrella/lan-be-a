@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(helmet());
 app.use(
   cors({
-    credentials: false,
+    credentials: true,
     origin: FRONTEND_URL,
     allowedHeaders: ['sessionId', 'Content-Type', 'withCredentials', 'Authorization'],
     methods: ['GET', 'PUT', 'POST']
