@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const passportSetup = require('./config/passportSetup'); // eslint-disable-line
 const knexSessionStore = require('connect-session-knex')(session);
@@ -26,6 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(helmet());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
   cors({
     credentials: true,
